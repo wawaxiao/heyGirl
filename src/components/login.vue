@@ -39,12 +39,14 @@
         this.$refs.inputgl.setData();
         let account = this.$refs.inputgl.account;
         let passwd = this.$refs.inputgl.passwd;
-        let url= "http://localhost:8080/wwc/user/login";
-        this.$axios.get(url,{
-          account:account,
-          password:passwd
-          }).then(function (response) {
-          console.log(response.body);
+        var sendata ={"account":account,"password":passwd};
+        let url= "http://localhost:8080/heygirl/login";
+       this.$http.jsonp(url,{params:sendata}).then(function (res){
+            /*console.log(res.body);*/
+            alert(res.data.data());
+            alert(res.data.id)
+        },(error)=>{
+          console.log(error);
         });
       }
     }

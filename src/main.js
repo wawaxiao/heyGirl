@@ -3,15 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-//import vueResource from 'vue-resource'
+import vueResource from 'vue-resource'
 import 'bootstrap/dist/css/bootstrap.css'
 import axios from 'axios'
 
 Vue.config.productionTip = false
 
-//Vue.use(vueResource)
-
-Vue.prototype.$axios = axios;
+Vue.use(vueResource)
+Vue.http.options.xhr = { withCredentials: true }
+/*Vue.prototype.$axios = axios;*/
 
 /* eslint-disable no-new */
 new Vue({
