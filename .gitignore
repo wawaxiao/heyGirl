@@ -17,7 +17,6 @@ selenium-debug.log
 *.njsproj
 *.sln
 /target/
-/backended/
 backended/.classpath
 backended/.settings/org.eclipse.jdt.core.prefs
 backended/target/m2e-wtp/web-resources/META-INF/maven/com.org/wwc/pom.xml
