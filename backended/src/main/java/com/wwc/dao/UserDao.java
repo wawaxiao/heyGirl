@@ -7,5 +7,5 @@ import com.wwc.entities.User;
 @Repository
 public interface UserDao {
 	
-	public User selectByName(String userName);
+	public User selectByAccount(String account);
 }

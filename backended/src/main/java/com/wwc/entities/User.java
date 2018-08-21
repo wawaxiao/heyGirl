@@ -8,7 +8,7 @@ public class User {
 	private String userName;
 	private String password;
 	private String phoneNumber;
-	private String mail;
+	private String account;
 	private Date registerDate;
 
 	public int getId() {
@@ -43,12 +43,13 @@ public class User {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getMail() {
-		return mail;
+
+	public String getAccount() {
+		return account;
 	}
 
-	public void setMail(String mail) {
-		this.mail = mail;
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public Date getRegisterDate() {
@@ -61,7 +62,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [ id=" + id + " userName=" + userName + " passwoed" + password + " mail=" + mail + " phoneNumber="
+		return "User [ id=" + id + " userName=" + userName + " password=" + password + " account=" + account + " phoneNumber="
 				+ phoneNumber + " registerDate=" + registerDate + " ]";
 	}
 }

@@ -16,16 +16,21 @@ public class UserController {
 	private UserService service;
 
 	@RequestMapping("login")
-	public ModelAndView login(String account, String password) {
-		User user = service.selectByName(account);
-		ModelAndView mv = new ModelAndView("hello");
-		mv.addObject(user);
-		return mv;
+	@ResponseBody
+	public User login(String account, String password) {
+		User user = service.selectByAccount(account);
+		if(user.getPassword().equals(password))
+			return user;
+		else
+			return null;
 	}
 
 	@RequestMapping("register")
 	@ResponseBody
-	public String register() {
-		return null;
+	public ModelAndView register() {
+		User user = service.selectByAccount("huhao");
+		ModelAndView mv = new ModelAndView("hello");
+		mv.addObject(user);
+		return mv;
 	}
 }

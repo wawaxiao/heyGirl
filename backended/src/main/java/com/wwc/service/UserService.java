@@ -12,7 +12,7 @@ public class UserService {
 	@Resource
 	private UserDao userDao;
 
-	public User selectByName(String userName) {
-		return userDao.selectByName(userName);
+	public User selectByAccount(String account) {
+		return userDao.selectByAccount(account);
 	}
 }
