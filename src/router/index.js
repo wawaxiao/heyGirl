@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Resources from 'vue-resource'
 import todoItem from '@/components/todoItem'
 import register from '@/components/register'
 import login from '@/components/login'
-import common from '@/components/common-page'
-
+import common from '@/components/common'
+import user from '@/components/user'
 Vue.use(Router)
 
 
@@ -17,15 +16,20 @@ export default new Router({
     },
     {
       path:"/home",
-      component:common
+      component:common,
     },
     {
-      path: '/user/login',
-      component: login
-    },
-    {
-      path: '/user/register',
-      component: register
+      path:'/user',
+      component:user,
+      children:[
+      {
+        path:'/user/login',
+        component:login
+      },{
+        path:'/user/register',
+        component:register
+      }
+    ]
     },
     {
       path: '/todoItem',

@@ -1,11 +1,14 @@
 <template>
-  <div class="row justify-content-md-center">
-    <div class="card border-info mb-3 ">
-      <card-header></card-header>
-      <div class="card-body">
-        <input-gl :lgtxt="registerText" ref="inputgl"></input-gl>
-        <button type="button" class="btn btn-info rounded" @click="submit()">{{option}}</button>
-        <card-footer :option="option"></card-footer>
+  <div>
+    <header-nav v-if="false"></header-nav>
+    <div class="row justify-content-md-center">
+      <div class="card border-info mb-3 ">
+        <card-header></card-header>
+        <div class="card-body">
+          <input-gl :lgtxt="registerText" ref="inputgl"></input-gl>
+          <button type="button" class="btn btn-info rounded" @click="submit()">{{option}}</button>
+          <card-footer :option="option"></card-footer>
+        </div>
       </div>
     </div>
   </div>
@@ -13,6 +16,7 @@
 
 <script>
   import inputgl from '../components/input-gl'
+  import HeaderNav from './header-nav'
   import cardheader from '../components/card-header'
   import cardfooter from '../components/card-footer'
 
@@ -27,7 +31,8 @@
     components:{
       'card-header':cardheader,
       'card-footer':cardfooter,
-      'input-gl':inputgl
+      'input-gl':inputgl,
+      'header-nav':HeaderNav
     },
     methods:{
       submit:function () {
