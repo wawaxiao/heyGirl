@@ -59,10 +59,10 @@ public class User {
 	public void setRegisterDate(Date registerDate) {
 		this.registerDate = registerDate;
 	}
-
+/*
 	@Override
 	public String toString() {
 		return "User [ id=" + id + " userName=" + userName + " password=" + password + " account=" + account + " phoneNumber="
 				+ phoneNumber + " registerDate=" + registerDate + " ]";
-	}
+	}*/
 }
