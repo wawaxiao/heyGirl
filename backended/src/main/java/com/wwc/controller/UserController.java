@@ -1,8 +1,6 @@
 package com.wwc.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +12,9 @@ import com.wwc.service.UserService;
 
 @Controller
 public class UserController {
-
+	
+	private static Logger log = Logger.getLogger(UserController.class);
+	
 	@Autowired
 	private UserService service;
 
@@ -23,6 +23,7 @@ public class UserController {
 	public User login(String account, String password) {
 		User user = service.selectByAccount(account);
 		if(user.getPassword().equals(password)) {
+			log.info("比对密码");
 			return user;
 		}else {
 			return null;
