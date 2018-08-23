@@ -16,7 +16,7 @@
 
 <script>
   import inputgl from '../components/input-gl'
-  import HeaderNav from './header-nav'
+  import headerNav from './headerNav'
   import cardheader from '../components/card-header'
   import cardfooter from '../components/card-footer'
 
@@ -32,7 +32,7 @@
       'card-header':cardheader,
       'card-footer':cardfooter,
       'input-gl':inputgl,
-      'header-nav':HeaderNav
+      'header-nav':headerNav
     },
     methods:{
       submit:function () {

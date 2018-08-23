@@ -6,9 +6,16 @@
 
 <script>
 
+  import headerNav from '../components/headerNav'
   export default {
     name: 'user',
-    components:{}
+    data:function(){
+      return{
+      }
+    },
+    components:{
+      headerNav
+    }
   }
 </script>
 

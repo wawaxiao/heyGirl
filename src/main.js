@@ -5,12 +5,14 @@ import App from './App'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.css'
 import axios from 'axios'
+import store from './vuex/store'
 
 Vue.prototype.$axios= axios
 
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

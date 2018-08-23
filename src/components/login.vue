@@ -1,6 +1,5 @@
 <template>
   <div>
-    <header-nav v-if="isLogin" ref="header-nav"></header-nav>
     <div class="row justify-content-md-center">
       <div class="card border-info mb-3 ">
         <card-header></card-header>
@@ -21,15 +20,13 @@
 
 <script>
   import inputgl from '../components/input-gl'
-  import HeaderNav from './header-nav'
   import cardheader from '../components/card-header'
   import cardfooter from '../components/card-footer'
+
   export default {
     name: "login",
-    props:["isLogin"],
     data:function(){
       return {
-        message:"",
         option:'登录',
         loginText:['手机号或邮箱','密码'],
       }
@@ -38,7 +35,6 @@
       'input-gl':inputgl,
       'card-header':cardheader,
       'card-footer':cardfooter,
-      'header-nav':HeaderNav
     },
     methods: {
       validate:function () {
@@ -50,13 +46,9 @@
         sendata.append("password",passwd);
         var that = this
         this.$axios.post("api/login",sendata).then(function (res){
-          that.message = res.data;
-          console.log(that.isLogin)
-          /*that.isLogin = false*/
-          that.$refs.HeaderNav.isLogin = true
-          /*alert("success")*/
-
+          that.$store.commit('transUser',res.data)
           that.$router.push({path: '/home'})
+          that.$store.commit('changeState',true)
         },function (error) {
           console.log(error)
         });
